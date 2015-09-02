@@ -1,0 +1,158 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%   %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{sig-alternate}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{verbatim}
+
+%\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+%\noindent\keywordname\enspace\ignorespaces#1}
+
+% todo macro
+\usepackage{color}
+\newtheorem{deflda}{Axiom}
+\newcommand{\todo}[1]{\noindent\textcolor{red}{{\bf \{TODO}: #1{\bf \}}}}
+\newcommand{\neon}{NeOn }
+\newcommand{\protege}{Prot{\'e}g{\'e} }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Beginning of document  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% first the title is needed
+% --- ACM copyright metadata here ---
+%\conferenceinfo{SEM}{14, September 04 - 05 2014, Leipzig, AA, Germany}
+%\CopyrightYear{2015}
+%\crdata{978-1-4503-2927-9/14/09.}
+
+
+%\title{How to access and reuse ontologies in real-world scenarios}
+\title{Towards a Linked Dataset for French Districts Evolution}
+
+\numberofauthors{1}
+\author{
+% 1st. author
+\alignauthor Ghislain Auguste Atemezing\\
+       \affaddr{MONDECA}\\
+       \affaddr{35 boulevard Strasbourg, Paris, France}\\
+       \email{\small{ghislain.atemezing@mondeca.com}}
+% 3rd author
+  \alignauthor Nuria Garc{\'i}a-Santa\\
+       \affaddr{Expert System Iberia}\\
+       \affaddr{Campo de las Naciones, Madrid, Spain.}\\
+       \email{\small{ngarcia@expertsystem.com}}
+% 2nd. author
+\alignauthor Boris Villaz{\'o}n-Terrazas\\
+       \affaddr{Expert System Iberia}\\
+       \affaddr{Campo de las Naciones, Madrid, Spain.}\\
+       \email{\small{bvillazon@expertsystem.com}}       
+}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%
+%%%  Abstract  %%%
+%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+This paper provides a real-world scenario of combining heterogeneous datasets in plain text and shape files to create a dataset in RDF of the French districts evolution since 1790. We use two different datasets (1) a shape file containing polygons from the French Geographic Institute (IGN) and (2) a text file containing names of districts and events occurred at a certain time (fusion, merging, etc) with other entities from the National Statistics Institute (INSEE).  
+
+This work explores the use of semantic technologies to combine heterogeneous datasets (text and shape) for creating an RDF dataset explaining the geo-dynamic evolution of districts occurred since the French revolution. The resulting dataset reuses standard vocabularies for topographic entities, geometries, provenance and time. The expected outcome of the dataset is to interlink with other historical facts and build innovative applications consuming the dataset.
+%\keywords{ontology engineering, ontology reuse, LOV, Prot{\'e}g{\'e}, Plugin} 
+\end{abstract}
+
+% Categories for the papers.
+%\todo{Replace with the categories provided by Nuria}
+%\category{M}{Knowledge Management}
+%\category{M.1}{Knowledge engineering methodologies}
+%\category{M.1}{Knowledge engineering methodologies}
+%\category{M.8.}{Knowledge Reuse}
+\category{H.4}{Information Systems Applications}{Miscellaneous}
+\category{H.3.5}{Online Information Services}{Data sharing}[Web-based services]
+
+\terms{geospatial data, RDF modeling, Linked Data}
+
+\keywords{geodata, Linked dataset, aligning heterogeneous data}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  1. Introduction  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Introduction}\label{sec:introduction}
+\input{intro}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  2. Related work  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Related Work}\label{sec:soa}
+\input{relatedwork}
+
+
+\section{Legacy Datasets}
+\label{sec:legacy}
+\input{method}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  3.LOV APIs Description  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\vspace{-3mm}
+%\section{Linked Open Vocabulaires (LOV)}\label{sec:lov}
+
+\section{RDF Dataset Creation}
+\label{sec:creation}
+\input{creation}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  4.ProtegeLOV Description  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\vspace{-3mm}
+%\section{Prot{\'e}g{\'e}LOV}\label{sec:classification}
+%\input{plugin-core}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  5. Conclusion and Future Work  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Evaluation}\label{sec:conclusion}
+%\input{conclusions}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  Acknowledgments  %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{1mm}
+\paragraph{\textbf{Acknowledgments.}} %\label{sec:acknowledgments}
+Thanks to Pierre-Yves and the LOV team for maintaining the LOV catalog and the API access. This work has been supported by the KDrive Project.
+% More acknowledgments here
+%\vspace{-3mm}
+
+\bibliographystyle{abbrv}
+%\nocite{*}
+\bibliography{gir15}
+\balancecolumns
+\end{document}
